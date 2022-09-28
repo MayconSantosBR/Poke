@@ -6,6 +6,7 @@ namespace PokemonAPI.Controllers
     [Route("[controller]")]
     public class PokemonController : Controller
     {
+        [HttpGet]
         public IActionResult Create()
         {
             try

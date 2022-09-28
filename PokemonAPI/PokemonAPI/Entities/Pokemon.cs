@@ -8,9 +8,10 @@ namespace PokemonAPI.Entities
         public long IdPokemon { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public ICollection<Types> Types { get; set; }
+        public ICollection<PokemonType> Types { get; set; }
         public ICollection<Hability> Habilities { get; set; }
-        public List<PokemonTypes> PokemonTypes { get; set; }
+        public List<PokemonPokemonType> PokemonTypes { get; set; }
+        public ICollection<PokemonPokemonType> pokemonPokemonTypes { get; set; }
         public List<PokemonHability> PokemonHabilities { get; set; }
 
     }

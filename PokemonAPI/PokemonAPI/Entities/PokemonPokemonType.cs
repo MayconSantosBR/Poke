@@ -2,12 +2,12 @@
 
 namespace PokemonAPI.Entities
 {
-    public class PokemonTypes
+    public class PokemonPokemonType
     {
-        [Key]
+        public long Id { get; set; }
         public long IdPokemon { get; set; }
         public Pokemon Pokemon { get; set; }
         public long IdType { get; set; }
-        public Types Types { get; set; }
+        public PokemonType PokemonType { get; set; }
     }
 }

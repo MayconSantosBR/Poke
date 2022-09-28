@@ -8,11 +8,11 @@ namespace PokemonAPI.Context
     public class MainContext: DbContext
     {
         public DbSet<Pokemon> Pokemons { get; set; }
-        public DbSet<Type> Types { get; set; }
+        public DbSet<PokemonType> Types { get; set; }
         public DbSet<Hability> Habilities { get; set; }
         public DbSet<Effect> Effects { get; set; }
-        //public DbSet<PokemonTypes> PokemonTypes { get; set; }
-        //public DbSet<PokemonHability> PokemonHability { get; set; }
+        public DbSet<PokemonHability> PokemonHability { get; set; }
+        public DbSet<PokemonPokemonType> PokemonPokemonTypes { get; set; }
         public MainContext(DbContextOptions<MainContext> options): base(options)
         {
 
@@ -24,30 +24,46 @@ namespace PokemonAPI.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Entity<Pokemon>()
-                .HasMany(p => p.Types)
-                .WithMany(p => p.Pokemons)
-                .UsingEntity<PokemonTypes>(
-                    j => j.HasOne(pt => pt.Types)
-                        .WithMany(t => t.PokemonTypes)
-                        .HasForeignKey(pt => pt.IdType),
-                    j => j.HasOne(pt => pt.Pokemon)
-                        .WithMany(p => p.PokemonTypes)
-                        .HasForeignKey(pt => pt.IdPokemon));
+                .Entity<Pokemon>().HasKey(x => x.IdPokemon);
 
             modelBuilder
-                .Entity<Pokemon>()
-                .HasMany(p => p.Habilities)
-                .WithMany(p => p.Pokemons)
-                .UsingEntity<PokemonHability>(
-                    j => j.HasOne(pt => pt.Hability)
-                        .WithMany(t => t.PokemonHabilities)
-                        .HasForeignKey(pt => pt.IdHability),
-                    j => j.HasOne(pt => pt.Pokemon)
-                        .WithMany(p => p.PokemonHabilities)
-                        .HasForeignKey(pt => pt.IdPokemon));
-            modelBuilder.Entity<PokemonTypes>().HasKey(c => c.IdPokemon);
-            modelBuilder.Entity<PokemonHability>().HasKey(c => c.IdHability);
+                .Entity<PokemonType>().HasKey(x => x.Id);
+
+            modelBuilder
+                .Entity<Hability>().HasKey(x => x.IdHability);
+
+            modelBuilder
+                .Entity<Effect>().HasKey(x => x.IdEffect);
+
+            modelBuilder
+                .Entity<PokemonHability>().HasKey(x => x.Id);
+
+            modelBuilder
+                .Entity<PokemonPokemonType>().HasKey(x => x.Id);
+
+            modelBuilder
+                .Entity<PokemonPokemonType>()
+                .HasOne(x => x.PokemonType)
+                .WithMany(x => x.pokemonPokemonTypes)
+                .HasForeignKey(x => x.IdType);
+
+            modelBuilder
+               .Entity<PokemonPokemonType>()
+               .HasOne(x => x.Pokemon)
+               .WithMany(x => x.pokemonPokemonTypes)
+               .HasForeignKey(x => x.IdPokemon);
+
+            modelBuilder
+                .Entity<PokemonHability>()
+                .HasOne(x => x.Pokemon)
+                .WithMany(x => x.PokemonHabilities)
+                .HasForeignKey(x => x.IdPokemon);
+
+            modelBuilder
+                .Entity<PokemonHability>()
+                .HasOne(x => x.Hability)
+                .WithMany(x => x.PokemonHabilities)
+                .HasForeignKey(x => x.IdHability);
         }
     }
 }
