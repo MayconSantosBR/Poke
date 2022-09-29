@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Temp\\Poke\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj": {}
+    "C:\\Users\\mayco\\source\\repos\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj": {}
   },
   "projects": {
-    "C:\\Temp\\Poke\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj": {
+    "C:\\Users\\mayco\\source\\repos\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Temp\\Poke\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj",
+        "projectUniqueName": "C:\\Users\\mayco\\source\\repos\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj",
         "projectName": "PokemonAPI",
-        "projectPath": "C:\\Temp\\Poke\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj",
-        "packagesPath": "C:\\Users\\hub\\.nuget\\packages\\",
-        "outputPath": "C:\\Temp\\Poke\\PokemonAPI\\PokemonAPI\\obj\\",
+        "projectPath": "C:\\Users\\mayco\\source\\repos\\PokemonAPI\\PokemonAPI\\PokemonAPI.csproj",
+        "packagesPath": "C:\\Users\\mayco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mayco\\source\\repos\\PokemonAPI\\PokemonAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hub\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mayco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

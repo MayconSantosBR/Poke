@@ -23,47 +23,47 @@ namespace PokemonAPI.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder
-                .Entity<Pokemon>().HasKey(x => x.IdPokemon);
+            //modelBuilder
+            //    .Entity<Pokemon>().HasKey(x => x.IdPokemon);
 
-            modelBuilder
-                .Entity<PokemonType>().HasKey(x => x.Id);
+            //modelBuilder
+            //    .Entity<PokemonType>().HasKey(x => x.Id);
 
-            modelBuilder
-                .Entity<Hability>().HasKey(x => x.IdHability);
+            //modelBuilder
+            //    .Entity<Hability>().HasKey(x => x.IdHability);
 
-            modelBuilder
-                .Entity<Effect>().HasKey(x => x.IdEffect);
+            //modelBuilder
+            //    .Entity<Effect>().HasKey(x => x.IdEffect);
 
-            modelBuilder
-                .Entity<PokemonHability>().HasKey(x => x.Id);
+            //modelBuilder
+            //    .Entity<PokemonHability>().HasKey(x => x.Id);
 
-            modelBuilder
-                .Entity<PokemonPokemonType>().HasKey(x => x.Id);
+            //modelBuilder
+            //    .Entity<PokemonPokemonType>().HasKey(x => x.Id);
 
-            modelBuilder
-                .Entity<PokemonPokemonType>()
-                .HasOne(x => x.PokemonType)
-                .WithMany(x => x.pokemonPokemonTypes)
-                .HasForeignKey(x => x.IdType);
+            //modelBuilder
+            //    .Entity<PokemonPokemonType>()
+            //    .HasOne(x => x.PokemonType)
+            //    .WithMany(x => x.pokemonPokemonType)
+            //    .HasForeignKey(x => x.IdType);
 
-            modelBuilder
-               .Entity<PokemonPokemonType>()
-               .HasOne(x => x.Pokemon)
-               .WithMany(x => x.pokemonPokemonTypes)
-               .HasForeignKey(x => x.IdPokemon);
+            //modelBuilder
+            //   .Entity<PokemonPokemonType>()
+            //   .HasOne(x => x.Pokemon)
+            //   .WithMany(x => x.pokemonPokemonTypes)
+            //   .HasForeignKey(x => x.IdPokemon);
 
-            modelBuilder
-                .Entity<PokemonHability>()
-                .HasOne(x => x.Pokemon)
-                .WithMany(x => x.PokemonHabilities)
-                .HasForeignKey(x => x.IdPokemon);
+            //modelBuilder
+            //    .Entity<PokemonHability>()
+            //    .HasOne(x => x.Pokemon)
+            //    .WithMany(x => x.PokemonHabilities)
+            //    .HasForeignKey(x => x.IdPokemon);
 
-            modelBuilder
-                .Entity<PokemonHability>()
-                .HasOne(x => x.Hability)
-                .WithMany(x => x.PokemonHabilities)
-                .HasForeignKey(x => x.IdHability);
+            //modelBuilder
+            //    .Entity<PokemonHability>()
+            //    .HasOne(x => x.Hability)
+            //    .WithMany(x => x.PokemonHabilities)
+            //    .HasForeignKey(x => x.IdHability);
         }
     }
 }
